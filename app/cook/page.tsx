@@ -28,15 +28,23 @@ const CookPage = () => {
         base64Image = reader.result as string;
         try {
           setLoading(true);
-
-          const response = await axios.post("/api/receipe", {
-            base64Image,
-            mimeType,
+          const response = await fetch("/api/receipe", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              base64Image,
+              mimeType,
+            }),
           });
 
-          if (response.status === 200) {
+          if (response.ok) {
+            const data = await response.json();
             setLoading(false);
-            setReceipe(response.data?.kwargs?.content);
+            setReceipe(data?.kwargs?.content);
+          } else {
+            throw new Error("Response was not ok");
           }
         } catch (error) {
           console.log(error);
