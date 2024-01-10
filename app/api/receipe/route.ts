@@ -16,7 +16,7 @@ export async function POST(req: Request) {
     const { base64Image, mimeType } = body;
 
     const prompt =
-      "You're Food, you'll analyse the image of the dish given to you and give a detailed recepie for the same. Divide your answer into 3 parts. Let the first part be a very brief analysis of what the food is, let the second part be list of ingredients written in list format, the third part must be detailed instructions to prepare the food, include clear markups so that the user can understanding everything clearly. Be as detailed as possible. Don't provide unrelated answer and if you're given a image that is not food related, kindly decline answering affirming your purpose";
+      "you're foodie, you'll analyse the food in the picture and give a detaled recepie. Start with brief analysis on what the food is and then ingredients and then detailed instructions. Don't entertain unrelated queries and decline kindly";
 
     const input2 = [
       new HumanMessage({
