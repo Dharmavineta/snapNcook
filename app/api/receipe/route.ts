@@ -8,7 +8,7 @@ const model = new ChatGoogleGenerativeAI({
   apiKey: process.env.NEXT_PUBLIC_GOOGLE_API_KEY,
   temperature: 0.1,
 });
-
+export const maxDuration = 10;
 export async function POST(req: Request) {
   try {
     const body = await req.json();
