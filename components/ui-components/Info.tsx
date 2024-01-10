@@ -11,7 +11,7 @@ const Info = () => {
             alt=""
             height={200}
             width={200}
-            className="w-[400px] h-[400px] object-cover"
+            className="lg:w-[400px] lg:h-[400px] w-[200px] h-[200px] object-cover"
           />
         </div>
         <div className="flex flex-col text-white">
