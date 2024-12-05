@@ -4,7 +4,7 @@ import { HumanMessage } from "@langchain/core/messages";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
 const model = new ChatGoogleGenerativeAI({
-  modelName: "gemini-pro-vision",
+  modelName: "gemini-1.5-flash",
   apiKey: process.env.NEXT_PUBLIC_GOOGLE_API_KEY,
   temperature: 0.1,
 });
